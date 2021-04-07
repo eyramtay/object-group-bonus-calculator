@@ -41,3 +41,66 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+
+const newEmployees = [];
+
+function updateEmployees (name, bonusPercentage, totalCompensation, totalBonus ) {
+  let employee = {
+    name,
+    bonusPercentage,
+    totalCompensation,
+    totalBonus,
+  }
+  newEmployees.push(employee);
+  return newEmployees;
+}
+updateEmployees('Atticus', 0, 0, 0);
+updateEmployees('Jem', 0, 0, 0);
+updateEmployees('Scout', 0, 0, 0);
+updateEmployees('Robert', 0, 0, 0);
+updateEmployees('Mayella', 0, 0, 0);
+console.log(newEmployees);
+
+
+
+function updateBonus (array, array2) {
+  for (let i = 0, j = 0; i < array.length, j < array2.length; i++, j++) {
+    if (array2[j].reviewRating <= 2) {
+      array[i].bonusPercentage = 0;
+    }
+    else if(array2[j].reviewRating === 3){
+      array[i].bonusPercentage = 4;
+    }
+    else if(array2[j].reviewRating === 4){
+      array[i].bonusPercentage = 6;
+    }
+    else if(array2[j].reviewRating === 5){
+      array[i].bonusPercentage = 10;
+    }
+  }
+
+  return array;
+}
+console.log(updateBonus(newEmployees, employees));
+console.log(newEmployees);
+
+
+
+
+function calculateBonus (array3) {
+  if (array3.reviewRating <= 2) {
+    console.log('No bonus');
+  } else if (array2.reviewRating === 3) {
+    console.log('Should receive');
+  }
+  }
+
+
+
+
+function blank (array4) {
+  for (let i = 0; i < array4.length; i++) {
+    console.log(array4[i]);
+  } return 
+}
