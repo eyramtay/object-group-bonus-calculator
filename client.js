@@ -79,28 +79,39 @@ function updateBonus (array, array2) {
       array[i].bonusPercentage = 10;
     }
   }
-
+  for (let x = 0, y = 0; x < array.length, y < array2.length; x++, y++) {
+    parseInt(array2[y].annualSalary, 10);
+    if (array2[y].annualSalary > 65000){
+      array[x].bonusPercentage -= 1;
+    }
+    if (array2[y].employeeNumber.length === 4){
+      array[x].bonusPercentage += 5;
+    }
+  }
+  for (let o = 0, v = 0; o < array.length, v < array2.length; o++, v++){
+    if (array[o].bonusPercentage > 13){
+      array[o].bonusPercentage = 13;
+    }
+    else if (array[o].bonusPercentage < 0){
+      array[o].bonusPercentage = 0;
+    }
+  }
   return array;
 }
 console.log(updateBonus(newEmployees, employees));
 console.log(newEmployees);
 
 
-
-
-function calculateBonus (array3) {
-  if (array3.reviewRating <= 2) {
-    console.log('No bonus');
-  } else if (array2.reviewRating === 3) {
-    console.log('Should receive');
+function calculateBonus (array, array2){
+  for (let i = 0, j = 0; i < array.length, j < array2.length; i++, j++){
+    array2[j].annualSalary = parseInt(array2[j].annualSalary, 10);
+    array[i].bonusPercentage = array[i].bonusPercentage / 100;
+    array[i].totalBonus = array2[j].annualSalary * array[i].bonusPercentage;
+    array[i].totalBonus = Math.round(array[i].totalBonus);
+    array[i].totalCompensation = array[i].totalBonus + array2[j].annualSalary;
   }
-  }
-
-
-
-
-function blank (array4) {
-  for (let i = 0; i < array4.length; i++) {
-    console.log(array4[i]);
-  } return 
+return array;
 }
+
+calculateBonus(newEmployees, employees);
+console.log(newEmployees);
