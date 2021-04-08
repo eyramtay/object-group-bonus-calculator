@@ -115,3 +115,10 @@ return array;
 
 calculateBonus(newEmployees, employees);
 console.log(newEmployees);
+
+for (let i = 0; i < newEmployees.length; i++) {
+
+console.log(`${newEmployees[i].name}'s bonus percentage is: ${newEmployees[i].bonusPercentage}. 
+And their total bonus is: ${newEmployees[i].totalBonus}. Making their total compensation equal: 
+${newEmployees[i].totalCompensation}.`)
+};
